@@ -1,7 +1,8 @@
 import os
 
 os.environ["PROJECT_DIR"] = os.path.dirname(os.path.realpath(__file__))
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = ""  # cuda면 "0"입력
+
 from bin.ft_transformer import *
 
 if __name__ == "__main__":
@@ -58,7 +59,9 @@ if __name__ == "__main__":
     loss_fn = (
         F.binary_cross_entropy_with_logits
         if D.is_binclass
-        else F.cross_entropy if D.is_multiclass else F.mse_loss
+        else F.cross_entropy
+        if D.is_multiclass
+        else F.mse_loss
     )
     model = Transformer(
         d_numerical=0 if X_num is None else X_num["train"].shape[1],
