@@ -166,3 +166,4 @@ output/**/*.*
 .vscode/
 .ruff_cache
 local/
+/output/adult/
