@@ -167,3 +167,4 @@ output/**/*.*
 .ruff_cache
 local/
 /output/adult/
+/output/
