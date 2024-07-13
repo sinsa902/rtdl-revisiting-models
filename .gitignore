@@ -165,3 +165,4 @@ output/**/*.*
 local/
 /output/adult/
 /output/
+/.idea/
